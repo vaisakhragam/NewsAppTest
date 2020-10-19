@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/view_pager_fragment">
+
+    <fragment
+        android:id="@+id/view_pager_fragment"
+        android:name="com.example.newsapp.ui.main.view.HomeViewPagerFragment"
+        tools:layout="@layout/fragment_view_pager">
+
+        <action
+            android:id="@+id/action_view_pager_fragment_to_sources_fragment"
+            app:destination="@id/sources_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sources_fragment"
+        android:name="com.example.newsapp.ui.main.view.SourcesFragment"
+        android:label="sources"
+        tools:layout="@layout/fragment_sources">
+
+        <action
+            android:id="@+id/action_sources_fragment_to_all_news_fragment"
+            app:destination="@id/all_news_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/all_news_fragment"
+        android:name="com.example.newsapp.ui.main.view.AllNewsFragment"
+        android:label="All News"
+        tools:layout="@layout/fragment_all_news">
+
+    </fragment>
+
+</navigation>
